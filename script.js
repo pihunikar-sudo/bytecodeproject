@@ -1,3 +1,22 @@
+// Hamburger Menu Toggle
+const hamburger = document.getElementById('hamburger');
+const navMenu = document.getElementById('navMenu');
+
+if(hamburger) {
+  hamburger.addEventListener('click', function() {
+    hamburger.classList.toggle('active');
+    navMenu.classList.toggle('active');
+  });
+
+  // Close menu when link is clicked
+  navMenu.querySelectorAll('a').forEach(link => {
+    link.addEventListener('click', function() {
+      hamburger.classList.remove('active');
+      navMenu.classList.remove('active');
+    });
+  });
+}
+
 function revealOnScroll() {
       document.querySelectorAll('.reveal').forEach(el=>{
         const windowHeight=window.innerHeight;
