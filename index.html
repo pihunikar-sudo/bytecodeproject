@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Byte2Code Software Solution</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="icon" type="image/png" href="images/favicon.png">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+</head>
+<body>
+<!-- Navbar -->
+  <nav>
+    <h1>
+    <a href="index.html" class="logo">
+    <img src="/source/Gemini_Generated_Image_hyzeathyzeathyze.png" alt="Logo" class="logo-img">
+    <span>Byte2Code</span>
+    </a>
+   </h1>
+
+
+    <ul>
+      <li><a href="#hero">Home</a></li>
+      <li><a href="#about">About</a></li>
+      <li><a href="#services">Services</a></li>
+      <li><a href="#testimonials">Testimonials</a></li>
+      <li><a href="#pricing">Pricing</a></li>
+      <li><a href="#contact">Contact</a></li>
+      <li><a href="signup.html">Signup</a></li>
+      <li><a href="login.html">Login</a></li>
+      <button class="dark-toggle" onclick="toggleDarkMode()">🌙</button>
+
+    </ul>
+  </nav>
+
+  <!-- Hero -->
+  <section class="hero" id="hero">
+    <div class="slider" id="mainSlider">
+      <div class="slides">
+        <div class="slide" style="background-image:url('https://picsum.photos/1600/900?sig=1')">
+          <div class="slide-content">
+            <h2>Byte2Code Software Solution</h2>
+            <p>Innovative IT services to power your digital transformation.</p>
+            <a class="btn" href="signup.html">Get Started</a>
+          </div>
+        </div>
+        <div class="slide" style="background-image:url('https://picsum.photos/1600/900?sig=2')">
+          <div class="slide-content">
+            <h2>Custom Web &amp; Mobile Apps</h2>
+            <p>Design-driven development to grow your business.</p>
+            <a class="btn" href="signup.html">See Plans</a>
+          </div>
+        </div>
+        <div class="slide" style="background-image:url('https://picsum.photos/1600/900?sig=3')">
+          <div class="slide-content">
+            <h2>Scale With Cloud</h2>
+            <p>Reliable and secure cloud solutions for any workload.</p>
+            <a class="btn" href="signup.html">Contact Sales</a>
+          </div>
+        </div>
+      </div>
+      <button class="slider-nav prev" aria-label="Previous slide">‹</button>
+      <button class="slider-nav next" aria-label="Next slide">›</button>
+      <div class="slider-dots" aria-hidden="false"></div>
+    </div>
+  </section>
+
+  <!-- About -->
+  <section class="about reveal" id="about">
+    <h2>About Us</h2>
+    <p>Byte2Code is a trusted IT services company providing cutting-edge solutions in 
+       web development, mobile apps, cloud, and consulting. We empower businesses to 
+       thrive in the digital era with secure and scalable technologies.</p>
+  </section>
+
+  <!-- Services -->
+  <section class="services reveal" id="services">
+    <h2>Our Services</h2>
+    <div class="services-grid">
+      <div class="service reveal">
+        <h3>🌐 Web Development</h3>
+        <p>Custom websites and web apps tailored to your business needs.</p>
+      </div>
+      <div class="service reveal">
+        <h3>📱 Mobile Apps</h3>
+        <p>Cross-platform mobile applications for Android & iOS users.</p>
+      </div>
+      <div class="service reveal">
+        <h3>☁️ Cloud Solutions</h3>
+        <p>Scalable cloud infrastructure for seamless business operations.</p>
+      </div>
+      <div class="service reveal">
+        <h3>💼 IT Consulting</h3>
+        <p>Expert consulting to optimize IT strategy and digital transformation.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Testimonials -->
+  <section class="testimonials reveal" id="testimonials">
+    <h2>What Our Clients Say</h2>
+    <div class="testimonial-box">
+      <div class="testimonial reveal">
+        <p>"Byte2Code built a secure cloud solution that helped scale our business seamlessly."</p>
+        <strong>- Rahul Sharma</strong>
+      </div>
+      <div class="testimonial reveal">
+        <p>"Excellent web development team! They delivered on time with amazing design."</p>
+        <strong>- Priya Singh</strong>
+      </div>
+      <div class="testimonial reveal">
+        <p>"Professional, innovative, and reliable IT partner. Highly recommend."</p>
+        <strong>- John Miller</strong>
+      </div>
+    </div>
+  </section>
+
+  <!-- Pricing -->
+  <section class="pricing reveal" id="pricing">
+    <h2>Our Pricing</h2>
+    <div class="pricing-cards">
+      <div class="price-card reveal">
+        <h3>Starter</h3>
+        <p class="price">$99/mo</p>
+        <ul>
+          <li>Basic Website</li>
+          <li>Email Support</li>
+          <li>1 GB Hosting</li>
+        </ul>
+        <button>Choose Plan</button>
+      </div>
+      <div class="price-card reveal">
+        <h3>Professional</h3>
+        <p class="price">$199/mo</p>
+        <ul>
+          <li>Advanced Website</li>
+          <li>24/7 Support</li>
+          <li>10 GB Hosting</li>
+        </ul>
+        <button>Choose Plan</button>
+      </div>
+      <div class="price-card reveal">
+        <h3>Enterprise</h3>
+        <p class="price">$399/mo</p>
+        <ul>
+          <li>Custom Solutions</li>
+          <li>Dedicated Support</li>
+          <li>Unlimited Hosting</li>
+        </ul>
+        <button>Choose Plan</button>
+      </div>
+    </div>
+  </section>
+
+  <!-- Contact -->
+  <section class="contact reveal" id="contact">
+    <h2>Contact Us</h2>
+    <p>We’d love to hear from you! Fill out the form below to get in touch.</p>
+    <form>
+      <input type="text" placeholder="Your Name" required>
+      <input type="email" placeholder="Your Email" required>
+      <textarea rows="5" placeholder="Your Message"></textarea>
+      <button type="submit">Send Message</button>
+    </form>
+  </section>
+
+  <!-- Footer Section -->
+<footer class="footer">
+  <div class="footer-container">
+    
+    <!-- Company Info -->
+    <div class="footer-col">
+      <h3 class="footer-logo">Byte2Code</h3>
+      <p>We provide innovative IT solutions, web & app development, and cloud services to empower your business growth.</p>
+    </div>
+
+    <!-- Quick Links -->
+    <div class="footer-col">
+      <h4>Quick Links</h4>
+      <ul>
+        <li><a href="#home">Home</a></li>
+        <li><a href="#about">About</a></li>
+        <li><a href="#services">Services</a></li>
+        <li><a href="#pricing">Pricing</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+    </div>
+
+    <!-- Services -->
+    <div class="footer-col">
+      <h4>Our Services</h4>
+      <ul>
+        <li><a href="#">Web Development</a></li>
+        <li><a href="#">Mobile Apps</a></li>
+        <li><a href="#">Cloud Solutions</a></li>
+        <li><a href="#">AI Integration</a></li>
+        <li><a href="#">IT Consulting</a></li>
+      </ul>
+    </div>
+
+    <!-- Contact Info -->
+    <div class="footer-col">
+      <h4>Contact Us</h4>
+      <p><strong>Email:</strong> info@byte2code.com</p>
+      <p><strong>Phone:</strong> +91 98765 43210</p>
+      <p><strong>Location:</strong> Bhubaneswar, India</p>
+      <div class="social-links">
+        <a href="#"><i class="fab fa-facebook-f"></i></a>
+        <a href="#"><i class="fab fa-twitter"></i></a>
+        <a href="#"><i class="fab fa-linkedin-in"></i></a>
+        <a href="#"><i class="fab fa-instagram"></i></a>
+      </div>
+    </div>
+  </div>
+
+  <!-- Bottom Bar -->
+  <div class="footer-bottom">
+    <p>© 2025 Byte2Code Software Solutions. All Rights Reserved.</p>
+  </div>
+</footer>
+
+
+ <button onclick="scrollToTop()" id="scrollTopBtn">⬆</button>
+    <script src="script.js"></script>
+</body>
+</html>

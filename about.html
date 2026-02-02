@@ -1,0 +1,215 @@
+  <!DOCTYPE html>
+  <html lang="en">
+  <head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>About Us | Byte2Code</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="icon" type="image/png" href="images/favicon.png">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <style>
+    .team-grid, .milestones-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 25px;
+      margin-top: 30px;
+    }
+    .team-card, .milestone-card {
+      background: #fff;
+      border-radius: 12px;
+      overflow: hidden;
+      padding: 20px;
+      text-align: center;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+      opacity:0; transform:translateY(30px);
+    }
+    .team-card:hover, .milestone-card:hover {
+      transform: translateY(-8px);
+      box-shadow: 0 6px 15px rgba(0,0,0,0.15);
+    }
+    .team-card img {
+      width: 120px;
+      height: 120px;
+      object-fit: cover;
+      border-radius: 50%;
+      margin-bottom: 10px;
+    }
+    .team-card h3, .milestone-card h3 {
+      color: #64ffda;
+      margin-bottom: 10px;
+    }
+    .team-card p, .milestone-card p {
+      font-size: 0.95rem;
+    }
+  </style>
+  </head>
+  <body>
+
+  <!-- Navbar -->
+  <nav>
+    <h1>
+      <a href="index.html" class="logo">
+        <img src="/source/Gemini_Generated_Image_hyzeathyzeathyze.png" alt="Logo">
+        <span>Byte2Code</span>
+      </a>
+    </h1>
+    <ul>
+      <li><a href="index.html">Home</a></li>
+      <li><a href="about.html" class="active">About</a></li>
+      <li><a href="portfolio.html">Portfolio</a></li>
+      <li><a href="project.html">Projects</a></li>
+      <li><a href="team.html">Team</a></li>
+      <li><a href="services.html">Services</a></li>
+      <li><a href="gallery.html">Gallery</a></li>
+      <li><a href="blog.html">Blog</a></li>
+      <li><a href="contact.html">Contact</a></li>
+      <button class="dark-toggle" onclick="toggleDarkMode()">🌙</button>
+    </ul>
+  </nav>
+
+  <!-- Hero Section -->
+  <section class="hero" id="hero">
+    <div>
+      <h2>About Byte2Code</h2>
+      <p>We are a trusted IT services company delivering innovative solutions for businesses worldwide.</p>
+    </div>
+  </section>
+
+  <!-- Company Overview -->
+  <section class="about reveal" id="company" style="padding:60px 20px; max-width:1200px; margin:auto;">
+    <h2 style="text-align:center; margin-bottom:30px;">Our Story</h2>
+    <p style="max-width:900px; margin:auto; text-align:center;">
+      Founded in 2018, Byte2Code has been empowering businesses with modern IT solutions including web development, mobile apps, cloud infrastructure, AI integration, and IT consulting. Our mission is to make technology work seamlessly for your business growth.
+    </p>
+  </section>
+
+  <!-- Team Section -->
+  <section  class="team" id=""team">
+    <h2>Meet Our Team</h2>
+    <p class="sub-text">Our talented professionals who turns ideas into innovation.</p>
+    <div class="team-container">
+    <div class="team-member">
+     <img src="IMG-20251102-WA0011.jpg" alt="pihunika rout">
+     <h3>Pihunika Rout</h3>
+     <p>Frontend developer</p>
+     <p>Create stunning and responsive web design for a smooth user</p>
+     </div>
+    
+     <div class="team-member">
+      <img src="IMG-20251102-WA0010.jpg" alt="Harapriya sahoo">
+      <h3>Harapriya Sahoo</h3>
+      <p>Backend developer</p>
+      <p>Manages databases and APIs to keep everything running smoothly.</p>
+      </div>
+
+      <div class="team-member">
+      <img src="IMG_20240614_093600232_HDR.jpg" alt="Debashree Nanda">
+      <h3>Debashree Nanda</h3>
+      <p>UI/UX designer</p>
+      <p>Designs user-friendely interface that connect creativity with technology.</p>
+      </div>
+
+      <div class="team-member">
+      <img src="IMG-20251102-WA0006.jpg" alt="Dilsad">
+      <h3>SK Dilsad Bari</h3>
+      <p>Data scientist</p>
+      <p>Spcialize in machine learning and data analysis , crating smart solution that turn data into meaningful insights.</p>
+      </div>
+
+       <div class="team-member">
+      <img src="IMG-20251102-WA0007.jpg" alt="Rudra">
+      <h3>Rudranarayan Sahoo</h3>
+      <p>Full Stack developer</p>
+      <p>Expert in both front-end and back-end development , building powerful and efficient web application from start to finish</p>
+      </div>
+
+       <div class="team-member">
+      <img src="IMG-20251102-WA0012.jpg" alt="Tofique">
+      <h3>Tofique Jamal</h3>
+      <p>Mobile App developer</p>
+      <p>Design and develops user-friendely mobile appication with smooth performance and creative interfaces for all devices.</p>
+      </div>
+
+    </div>
+  </div>
+  </section>
+
+  <!-- Milestones Section -->
+  <section class="milesstones" id="miles">
+  <h2>Our Achievements</h2>
+   <p class="sub-text">Every Milestones of Bytecode represents hard work , passion , and progress. From small ideas to succesful website launches , our journey has been driven by dedication and teamwork</p>
+
+    <div class="team-milesstone">
+
+     <ul>
+      <li>Developed multiple innovative web projects using HTML , CSS & Javascript.</li>
+      <li>Created a responsive & user-friendely interface for Bytecode.</li>
+      <li>succesful lunched Bytecode's first live website for project showcase.</li>
+      <li>Collaborated as a strong & creative development team.</li>
+      <li>Recognized for excellence in web development at college events</li>
+      <li>completed several front-end design challanges within deadlines</li>
+     </ul>
+    
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="footer-container">
+      <div class="footer-col">
+        <h3 class="footer-logo">Byte2Code</h3>
+        <p>Providing innovative IT solutions and services to empower your business growth.</p>
+      </div>
+      <div class="footer-col">
+        <h4>Quick Links</h4>
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="about.html">About</a></li>
+          <li><a href="portfolio.html">Portfolio</a></li>
+          <li><a href="project.html">Projects</a></li>
+          <li><a href="team.html">Team</a></li>
+          <li><a href="services.html">Services</a></li>
+          <li><a href="gallery.html">Gallery</a></li>
+          <li><a href="blog.html">Blog</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+      </div>
+<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d7013.036764305657!2d77.09083695!3d28.494047499999997!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x390d19382985d7d1%3A0xb03bedc65fe6f2b2!2sDLF%20Cyber%20City%2C%20DLF%20Phase%202%2C%20Sector%2024%2C%20Gurugram%2C%20Haryana!5e0!3m2!1sen!2sin!4v1762144516263!5m2!1sen!2sin" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+
+
+
+      <div class="footer-col">
+        <h4>Follow Us</h4>
+        <div class="social-links">
+          <a href="#"><i class="fab fa-facebook-f"></i></a>
+          <a href="#"><i class="fab fa-twitter"></i></a>
+          <a href="#"><i class="fab fa-linkedin-in"></i></a>
+          <a href="#"><i class="fab fa-instagram"></i></a>
+        </div>
+      
+    <div class="footer-bottom">
+      <p>© 2025 Byte2Code Software Solutions. All Rights Reserved.</p>
+    </div>
+  </footer>
+
+  <!-- Scroll-to-top -->
+  <button id="scrollTopBtn" onclick="scrollToTop()">⬆</button>
+
+  <script src="script.js"></script>
+  <script>
+    // Reveal on scroll
+    const reveals = document.querySelectorAll('.reveal');
+    window.addEventListener('scroll', () => {
+      reveals.forEach(el => {
+        const windowHeight = window.innerHeight;
+        const elementTop = el.getBoundingClientRect().top;
+        const revealPoint = 150;
+        if(elementTop < windowHeight - revealPoint){
+          el.classList.add('active');
+        }
+      });
+    });
+  </script>
+  </body>
+  </html>

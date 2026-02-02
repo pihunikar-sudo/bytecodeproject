@@ -1,0 +1,365 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>User Dashboard | Byte2Code</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <style>
+    * {margin:0; padding:0; box-sizing:border-box; font-family: "Segoe UI", sans-serif;}
+
+    body {
+      display:flex;
+      min-height:100vh;
+      background:#f5f7fb;
+      color:#333;
+    }
+/* Navbar/Header */
+.navbar {
+  position:sticky;
+  top:0;
+  z-index:999;
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  background:#02fad1;
+  padding:15px 20px;
+  border-radius:12px;
+  box-shadow:0 4px 10px rgba(0,0,0,0.05);
+  margin-bottom:30px;
+}
+
+.nav-left h2 {
+  font-size:22px;
+  color:#1f2937;
+}
+
+.nav-right {
+  display:flex;
+  align-items:center;
+  gap:15px;
+}
+
+.nav-right .nav-icon {
+  font-size:20px;
+  color:#555;
+  cursor:pointer;
+  transition:0.3s;
+}
+.nav-right .nav-icon:hover {color:#1f2937;}
+
+/* Profile */
+.nav-profile {
+  position:relative;
+  cursor:pointer;
+}
+.nav-profile img {
+  width:35px;
+  height:35px;
+  border-radius:50%;
+  border:2px solid #1f2937;
+}
+
+/* Dropdown Menu */
+.dropdown-menu {
+  position:absolute;
+  top:45px;
+  right:0;
+  background:#fff;
+  border-radius:8px;
+  box-shadow:0 4px 12px rgba(0,0,0,0.1);
+  display:none;
+  flex-direction:column;
+  min-width:160px;
+  overflow:hidden;
+  animation:fadeIn 0.2s ease;
+}
+
+.dropdown-menu a {
+  padding:12px 15px;
+  color:#333;
+  text-decoration:none;
+  display:flex;
+  align-items:center;
+  gap:10px;
+  font-size:14px;
+  transition:0.3s;
+}
+.dropdown-menu a:hover {
+  background:#f5f7fb;
+  color:#2563eb;
+}
+
+@keyframes fadeIn {
+  from {opacity:0; transform:translateY(-5px);}
+  to {opacity:1; transform:translateY(0);}
+}
+
+.toggle-btn {
+  display:none;
+  font-size:22px;
+  cursor:pointer;
+  color:#1f2937;
+}
+
+/* Show toggle on mobile */
+@media(max-width:768px){
+  .toggle-btn {display:block;}
+}
+
+.toggle-btn {display:none;}
+/* Welcome Message */
+.welcome-message {
+  margin-bottom:30px;
+}
+
+.welcome-message h3 {
+  font-size:28px;
+  margin-bottom:10px;
+  color:#1f2937;
+}
+.welcome-message p {
+  color:#555;
+  font-size:16px;
+}
+
+
+    /* Sidebar */
+    aside {
+      width:250px;
+      background:#1f2937;
+      color:#fff;
+      display:flex;
+      flex-direction:column;
+      padding:20px;
+      position:fixed;
+      height:100vh;
+    }
+
+    .logo {
+      display:flex;
+      align-items:center;
+      margin-bottom:30px;
+    }
+    .logo img {width:40px; margin-right:10px;}
+    .logo span {font-size:20px; font-weight:bold;}
+
+    aside ul {list-style:none;}
+    aside ul li {
+      margin:15px 0;
+    }
+    aside ul li a {
+      color:#fff;
+      text-decoration:none;
+      padding:10px;
+      display:flex;
+      align-items:center;
+      border-radius:8px;
+      transition:0.3s;
+    }
+    aside ul li a:hover {
+      background:#374151;
+    }
+    aside ul li a i {
+      margin-right:10px;
+      font-size:18px;
+    }
+
+    /* Main Content */
+    main {
+      margin-left:250px;
+      flex:1;
+      padding:30px;
+    }
+
+    header {
+      display:flex;
+      justify-content:space-between;
+      align-items:center;
+      margin-bottom:30px;
+    }
+
+    header h2 {font-size:24px;}
+    header button {
+      background:#ef4444;
+      color:#fff;
+      border:none;
+      padding:8px 14px;
+      border-radius:8px;
+      cursor:pointer;
+      font-weight:500;
+      transition:0.3s;
+    }
+    header button:hover {
+      background:#dc2626;
+    }
+
+    /* Cards */
+    .cards {
+      display:grid;
+      grid-template-columns:repeat(auto-fit, minmax(250px, 1fr));
+      gap:20px;
+    }
+    .card {
+      background:#fff;
+      padding:20px;
+      border-radius:12px;
+      box-shadow:0 4px 8px rgba(0,0,0,0.1);
+      transition:0.3s;
+    }
+    .card:hover {
+      transform:translateY(-5px);
+    }
+    .card h3 {margin-bottom:10px;}
+
+    /* Footer */
+    footer {
+      margin-top:500px;
+      text-align:center;
+      font-size:14px;
+      color:#faf9f9;
+      height: 80px;
+      line-height: 80px;
+      border-radius: 10px;
+      background-color: #1f2937;
+    }
+
+    /* Responsive */
+    @media(max-width:768px) {
+      aside {
+        position:fixed;
+        left:-250px;
+        transition:0.3s;
+        z-index:1000;
+      }
+      aside.active {left:0;}
+      main {margin-left:0;}
+      .toggle-btn {
+        display:block;
+        cursor:pointer;
+        color:#1f2937;
+        font-size:24px;
+      }
+    }
+    .toggle-btn {display:none;}
+  </style>
+</head>
+<body>
+
+  <!-- Sidebar -->
+  <aside id="sidebar">
+    <div class="logo">
+      <img src="/source/Gemini_Generated_Image_hyzeathyzeathyze.png" alt="Logo">
+      <span>Byte2Code</span>
+    </div>
+    <ul>
+      <li><a href="dashboard.html"><i class="fa fa-home"></i> Dashboard</a></li>
+      <li><a href="profile.html"><i class="fa fa-user"></i> Profile</a></li>
+      <li><a href="settings.html"><i class="fa fa-cog"></i> Settings</a></li>
+      <li><a href="#"><i class="fa fa-envelope"></i> Messages</a></li>
+      <li><a href="#"><i class="fa fa-briefcase"></i> Projects</a></li>
+      <li><a href="#"><i class="fa fa-bell"></i> Notifications</a></li>
+      <li><a href="#"><i class="fa fa-chart-line"></i> Analytics</a></li>
+      <li><a href="login.html"><i class="fa fa-sign-in-alt"></i> Login</a></li>
+      <li><a href="signup.html"><i class="fa fa-user-plus"></i> Signup</a></li>
+    </ul>
+  </aside>
+
+  <!-- Main Content -->
+  <main>
+    <!-- Navbar -->
+<!-- Navbar -->
+<header class="navbar">
+  <div class="nav-left">
+    <h2>Welcome, <span id="username"></span> 🎉</h2>
+  </div>
+
+  <div class="nav-right">
+    <!-- Notification Icon -->
+    <div class="nav-icon">
+      <i class="fa fa-bell"></i>
+    </div>
+
+    <!-- Profile Dropdown -->
+    <div class="nav-profile" onclick="toggleDropdown()">
+      <img src="https://i.pravatar.cc/40" alt="Profile">
+      <div class="dropdown-menu" id="dropdownMenu">
+        <a href="profile.html"><i class="fa fa-user"></i> Profile</a>
+        <a href="settings.html"><i class="fa fa-cog"></i> Settings</a>
+        <a href="#" id="logoutDropdown"><i class="fa fa-sign-out-alt"></i> Logout</a>
+      </div>
+    </div>
+
+    <!-- Mobile Sidebar Toggle -->
+    <i class="fa fa-bars toggle-btn" onclick="toggleSidebar()"></i>
+  </div>
+</header>
+
+
+    <div class="welcome-message">
+      <h3>Your Dashboard</h3>
+      <p>Here you can manage your account, view projects, and track your progress.</p>
+    </div>
+
+    <div class="cards">
+      <div class="card">
+        <h3>📊 My Projects</h3>
+        <p>View and manage your projects here.</p>
+      </div>
+      <div class="card">
+        <h3>⚙️ Account Settings</h3>
+        <p>Update your profile and preferences.</p>
+      </div>
+      <div class="card">
+        <h3>📩 Messages</h3>
+        <p>Check updates and notifications.</p>
+      </div>
+      <div class="card">
+        <h3>📈 Analytics</h3>
+        <p>Track your activity and growth.</p>
+      </div>
+    </div>
+
+    <footer>
+      <p>© 2025 Byte2Code Software Solutions. All Rights Reserved.</p>
+    </footer>
+  </main>
+
+<script>
+  // Sidebar toggle for mobile
+  function toggleSidebar(){
+    document.getElementById("sidebar").classList.toggle("active");
+  }
+
+  // Logout
+  const logoutBtn = document.getElementById("logoutBtn");
+  logoutBtn.addEventListener("click", () => {
+    localStorage.removeItem("token");
+    window.location.href = "login.html";
+  });
+
+  // Show username (example)
+  document.getElementById("username").innerText = localStorage.getItem("username") || "User";
+
+
+  function toggleDropdown() {
+  document.getElementById("dropdownMenu").style.display =
+    document.getElementById("dropdownMenu").style.display === "flex" ? "none" : "flex";
+}
+
+// Close dropdown when clicking outside
+window.onclick = function(event) {
+  if (!event.target.closest(".nav-profile")) {
+    document.getElementById("dropdownMenu").style.display = "none";
+  }
+};
+
+// Logout from dropdown
+document.getElementById("logoutDropdown").addEventListener("click", () => {
+  localStorage.removeItem("token");
+  window.location.href = "login.html";
+});
+
+</script>
+</body>
+</html>
